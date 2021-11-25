@@ -1,14 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Filter widget</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"
+		integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
+		integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+
+	<!-- <script type="template-x" class="colorOptions">
+			<ul>
+				{{#each colorOpt}}
+					<li>{{this.make}} {{this.model}}</li>
+				{{/each}}
+			</ul>
+		</script>
+
+	<script type="template-x" class="brandOptions">
+			<ul>
+				{{#each brandOpt}}
+					<li>{{this.make}} {{this.model}}</li>
+				{{/each}}
+			</ul>
+		</script> -->
+
+		<script type="template-x" class="carTemplate">
+			<ul>
+				{{#each cars}}
+					<u><b><li>{{this.make}} {{this.model}}</li></b></u>
+					<div><b>Color</b>: {{this.color}}</div>
+					<div><b>Price</b>: {{this.price}}</div>
+					<div><b>Registration</b>: {{this.reg_number}}</div><br>
+				{{/each}}
+			</ul>
+		</script>
 
 </head>
+
 <body>
 	<h1>Filter widget</h1>
+
+	<div class="label">
+		<label for="makelabel" class="makelabel">Make</label>
+		<select name="make" class="make" id="make">
+			<option value="">Select make</option>
+			<option value="Volkswagen">Volkswagen</option>
+			<option value="Toyota">Toyota</option>
+			<option value="Nissan">Nissan</option>
+			<option value="Ford">Ford</option>
+		</select>
+	</div><br>
+
+	<div class="label">
+		<label for="colorlabel" class="colorlabel">Color</label>
+		<select name="color" class="color" id="color">
+			<option value="">Select color</option>
+			<option value="Red">Red</option>
+			<option value="Blue">Blue</option>
+			<option value="Orange">Orange</option>
+			<option value="White">White</option>
+			<option value="Grey">Grey</option>
+		</select>
+	</div><br>
+
+	<button class="btn">DISPLAY</button><br><br>
+
+	<u><h2>Car List for selected car or brand</h2></u>
+
+	<div class="filteredCar">
+
+
+	</div>
+
+	<script src="widget.js"></script>
 </body>
+
 </html>
