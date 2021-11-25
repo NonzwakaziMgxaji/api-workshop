@@ -9,7 +9,7 @@ button.addEventListener("click", function () {
 
     if (selectMake !== "" && selectColor == "") {
         axios
-            .get(`http://api-tutor.herokuapp.com/v1/cars/make/${selectMake}`)
+            .get(`https://api-tutor.herokuapp.com/v1/cars/make/${selectMake}`)
             .then(function (result) {
                 filteredCar.innerHTML = compiledTemplate({
                     cars: result.data
@@ -17,7 +17,7 @@ button.addEventListener("click", function () {
             });
     } else if (selectColor !== "" && selectMake == ""){
         axios
-            .get(`http://api-tutor.herokuapp.com/v1/cars/color/${selectColor}`)
+            .get(`https://api-tutor.herokuapp.com/v1/cars/color/${selectColor}`)
             .then(function (result) {
                 filteredCar.innerHTML = compiledTemplate({
                     cars: result.data
@@ -25,7 +25,7 @@ button.addEventListener("click", function () {
             });
     } else if (selectColor !== "" && selectMake !== ""){
         axios
-            .get(`http://api-tutor.herokuapp.com/v1/cars/make/${selectMake}/color/${selectColor}`)
+            .get(`https://api-tutor.herokuapp.com/v1/cars/make/${selectMake}/color/${selectColor}`)
             .then(function (result) {
                 filteredCar.innerHTML = compiledTemplate({
                     cars: result.data
