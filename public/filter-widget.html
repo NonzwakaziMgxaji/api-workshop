@@ -12,55 +12,32 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
 		integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
 
-	<!-- <script type="template-x" class="colorOptions">
-			<ul>
-				{{#each colorOpt}}
-					<li>{{this.make}} {{this.model}}</li>
-				{{/each}}
-			</ul>
-		</script>
+	<script type="template-x" class="carTemplate">
+		<table>
+			<tr>
+				<th>Make</th>
+				<th>Model</th>
+				<th>Color</th>
+				<th>Price</th>
+				<th>Reg_number</th>
+			</tr>
 
-	<script type="template-x" class="brandOptions">
-			<ul>
-				{{#each brandOpt}}
-					<li>{{this.make}} {{this.model}}</li>
-				{{/each}}
-			</ul>
-		</script> -->
-
-		<script type="template-x" class="carTemplate">
-			
-				
-<table>
-	<tr>
-		<th>Make</th>
-		<th>Model</th>
-		<th>Color</th>
-		<th>Price</th>
-		<th>Reg_number</th>
-	</tr>
-	{{#each cars}}
-	<tr>
-		<td>{{{this.make}}}</td>
-		<td>{{this.model}}</td>
-		<td>{{this.color}}</td>
-		<td>{{this.price}}</td>
-		<td>{{this.reg_number}}</td>
-	</tr>
-	{{/each}}
-</table>
-
-
-					
-				
-			
-		</script>
-
+			{{#each cars}}
+			<tr>
+				<td>{{{this.make}}}</td>
+				<td>{{this.model}}</td>
+				<td>{{this.color}}</td>
+				<td>{{this.price}}</td>
+				<td>{{this.reg_number}}</td>
+			</tr>
+			{{/each}}
+		</table>
+	</script>
 </head>
 
 <body>
 	<div class="container">
-		<h1>Filter widget</h1>
+		<u><h1>Filter widget</h1></u>
 
 		<div class="label">
 			<label for="makelabel" class="makelabel">Make</label>
@@ -72,7 +49,7 @@
 				<option value="Ford">Ford</option>
 			</select>
 		</div><br>
-	
+
 		<div class="label">
 			<label for="colorlabel" class="colorlabel">Color</label>
 			<select name="color" class="color" id="color">
@@ -84,14 +61,14 @@
 				<option value="Grey">Grey</option>
 			</select>
 		</div><br>
-	
+
 		<button class="btn">DISPLAY</button><br><br>
-	
-		<u><h2>Car List for selected car or brand</h2></u>
-	
+
+		<h2>Car List for selected car or brand</h2>
+
 		<div class="filteredCar">
-	
-	
+
+
 		</div>
 
 	</div>
