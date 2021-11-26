@@ -29,53 +29,72 @@
 		</script> -->
 
 		<script type="template-x" class="carTemplate">
-			<ul>
-				{{#each cars}}
-					<u><b><li>{{this.make}} {{this.model}}</li></b></u>
-					<div><b>Color</b>: {{this.color}}</div>
-					<div><b>Price</b>: {{this.price}}</div>
-					<div><b>Registration</b>: {{this.reg_number}}</div><br>
-				{{/each}}
-			</ul>
+			
+				
+<table>
+	<tr>
+		<th>Make</th>
+		<th>Model</th>
+		<th>Color</th>
+		<th>Price</th>
+		<th>Reg_number</th>
+	</tr>
+	{{#each cars}}
+	<tr>
+		<td>{{{this.make}}}</td>
+		<td>{{this.model}}</td>
+		<td>{{this.color}}</td>
+		<td>{{this.price}}</td>
+		<td>{{this.reg_number}}</td>
+	</tr>
+	{{/each}}
+</table>
+
+
+					
+				
+			
 		</script>
 
 </head>
 
 <body>
-	<h1>Filter widget</h1>
+	<div class="container">
+		<h1>Filter widget</h1>
 
-	<div class="label">
-		<label for="makelabel" class="makelabel">Make</label>
-		<select name="make" class="make" id="make">
-			<option value="">Select make</option>
-			<option value="Volkswagen">Volkswagen</option>
-			<option value="Toyota">Toyota</option>
-			<option value="Nissan">Nissan</option>
-			<option value="Ford">Ford</option>
-		</select>
-	</div><br>
-
-	<div class="label">
-		<label for="colorlabel" class="colorlabel">Color</label>
-		<select name="color" class="color" id="color">
-			<option value="">Select color</option>
-			<option value="Red">Red</option>
-			<option value="Blue">Blue</option>
-			<option value="Orange">Orange</option>
-			<option value="White">White</option>
-			<option value="Grey">Grey</option>
-		</select>
-	</div><br>
-
-	<button class="btn">DISPLAY</button><br><br>
-
-	<u><h2>Car List for selected car or brand</h2></u>
-
-	<div class="filteredCar">
-
+		<div class="label">
+			<label for="makelabel" class="makelabel">Make</label>
+			<select name="make" class="make" id="make">
+				<option value="">Select make</option>
+				<option value="Volkswagen">Volkswagen</option>
+				<option value="Toyota">Toyota</option>
+				<option value="Nissan">Nissan</option>
+				<option value="Ford">Ford</option>
+			</select>
+		</div><br>
+	
+		<div class="label">
+			<label for="colorlabel" class="colorlabel">Color</label>
+			<select name="color" class="color" id="color">
+				<option value="">Select color</option>
+				<option value="Red">Red</option>
+				<option value="Blue">Blue</option>
+				<option value="Orange">Orange</option>
+				<option value="White">White</option>
+				<option value="Grey">Grey</option>
+			</select>
+		</div><br>
+	
+		<button class="btn">DISPLAY</button><br><br>
+	
+		<u><h2>Car List for selected car or brand</h2></u>
+	
+		<div class="filteredCar">
+	
+	
+		</div>
 
 	</div>
-
 	<script src="widget.js"></script>
 </body>
 
